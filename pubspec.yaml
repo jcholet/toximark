@@ -40,7 +40,7 @@ dev_dependencies:
   mocktail: ^1.0.4
   riverpod_generator: ^2.4.3
   riverpod_lint: ^2.3.13
-  very_good_analysis: ^6.0.0
+  very_good_analysis: ^7.0.0
 
 flutter:
   uses-material-design: true
