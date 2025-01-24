@@ -51,6 +51,7 @@ class _ConfirmSignatureViewState extends ConsumerState<ConfirmSignatureView> {
               'Confirmation de la signature',
               style: context.textTheme.displayMedium!.copyWith(
                 fontSize: 22,
+                color: AppColor.primary,
               ),
             ),
             const VSpace.lg(),

@@ -65,6 +65,7 @@ class TransporterPickUpSigningState
               'Signature du transporteur',
               style: context.textTheme.displayMedium!.copyWith(
                 fontSize: 24,
+                color: AppColor.primary,
               ),
             ),
             const VSpace.xxl(),

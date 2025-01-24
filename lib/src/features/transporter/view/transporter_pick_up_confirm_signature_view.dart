@@ -53,6 +53,7 @@ class _TransporterPickUpConfirmSignatureViewState
               'Confirmation de la signature du transporteur',
               style: context.textTheme.displayMedium!.copyWith(
                 fontSize: 22,
+                color: AppColor.primary,
               ),
             ),
             const VSpace.lg(),

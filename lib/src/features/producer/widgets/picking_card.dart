@@ -63,7 +63,7 @@ class PickingCard extends StatelessWidget {
                       child: Padding(
                         padding: EdgeInsets.all(4),
                         child: PhosphorIcon(
-                          PhosphorIconsDuotone.truck,
+                          PhosphorIconsRegular.trash,
                           size: 22,
                           color: AppColor.white,
                         ),

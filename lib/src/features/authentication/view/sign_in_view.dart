@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:phosphor_flutter/phosphor_flutter.dart';
 import 'package:tennaxia_geolocation/l10n/string_hardcoded.dart';
@@ -64,12 +65,13 @@ class _SignInViewState extends ConsumerState<SignInView> {
               padding: const EdgeInsets.all(AppSpacing.lg),
               children: [
                 const VSpace.xl(),
-                Text(
-                  'Tennaxia - ToxiMark'.hardcoded,
-                  style: context.textTheme.headlineMedium?.copyWith(
-                    color: AppColor.primary,
+                Center(
+                  child: SvgPicture.asset(
+                    'lib/assets/img/tennaxia.svg', // Chemin mis à jour
+                    height: 60,
                   ),
                 ),
+                const VSpace.xl(),
                 const VSpace.xl(),
                 const VSpace.xl(),
                 AppTextField(
@@ -114,6 +116,13 @@ class _SignInViewState extends ConsumerState<SignInView> {
                   child: !state.isLoading
                       ? Text('Se connecter'.hardcoded)
                       : const AppProgressIndicator(color: AppColor.white),
+                ),
+                const VSpace.lg(),
+                Center(
+                  child: Text(
+                    'Application développé lors de la DCW 2025.',
+                    style: context.textTheme.bodySmall,
+                  ),
                 ),
               ],
             ),

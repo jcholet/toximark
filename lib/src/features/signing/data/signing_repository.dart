@@ -1,10 +1,9 @@
-import 'dart:typed_data';
 import 'dart:io';
+import 'dart:typed_data';
 
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
-import 'package:tennaxia_geolocation/src/features/producer/models/models.dart';
 import 'package:tennaxia_geolocation/src/features/user/user.dart';
 
 part 'signing_repository.g.dart';
@@ -84,6 +83,45 @@ class SigningRepository {
               DateTime.now().toUtc().toIso8601String(),
         },
       ).eq('id', pickUpId);
+
+      print('http://localhost:3000/sign/$pickUpId');
+
+      // Send email notification
+      // final smtpServer = SmtpServer(
+      //   'smtp-mail.outlook.com', // Outlook SMTP server
+      //   port: 587,
+      //   username: 'cholet.esiea@outlook.fr',
+      //   password: Env.smtpPassword,
+      //   ssl: false,
+      //   ignoreBadCertificate: false,
+      // );
+
+      // final message = Message()
+      //   ..from = const Address(
+      //     'cholet.esiea@outlook.fr',
+      //     'Tennaxia',
+      //   )
+      //   ..recipients.add('cholet@et.esiea.fr')
+      //   ..subject = 'Demande de signature électronique pour le centre de tri'
+      //   ..html = '''
+      //     <div style="font-family: Arial, sans-serif; line-height: 1.6;">
+      //       <p>Bonjour transporteur,</p>
+      //       <p>Pourriez-vous faire signer électroniquement le document ci-dessous au responsable du centre de tri ?</p>
+      //       <p><a href="http://localhost:3000/$pickUpId" style="color: #0066cc; text-decoration: underline;">http://localhost:3000/$pickUpId</a></p>
+      //       <p>Merci de votre aide.</p>
+      //       <br>
+      //       <p>Cordialement,<br>
+      //       L'équipe de Tennaxia</p>
+      //     </div>
+      //   ''';
+
+      // try {
+      //   await send(message, smtpServer);
+      //   print('Email sent successfully');
+      // } catch (e) {
+      //   print('Error sending email: $e');
+      //   print('SMTP Username: cholet.esiea@outlook.fr');
+      // }
     } catch (error, stackTrace) {
       Error.throwWithStackTrace(error, stackTrace);
     }

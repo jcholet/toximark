@@ -9,4 +9,8 @@ class Env {
       const String.fromEnvironment('MAPBOX_USERNAME');
   static String get mapboxStyleId =>
       const String.fromEnvironment('MAPBOX_STYLE_ID');
+  static String get smtpUsername =>
+      const String.fromEnvironment('SMTP_USERNAME');
+  static String get smtpPassword =>
+      const String.fromEnvironment('SMTP_PASSWORD');
 }

@@ -64,6 +64,7 @@ class ProducerSigningState extends ConsumerState<ProducerSigningView> {
               'Signature du producteur',
               style: context.textTheme.displayMedium!.copyWith(
                 fontSize: 24,
+                color: AppColor.primary,
               ),
             ),
             const VSpace.xxl(),
@@ -80,7 +81,7 @@ class ProducerSigningState extends ConsumerState<ProducerSigningView> {
                       child: Padding(
                         padding: EdgeInsets.all(6),
                         child: PhosphorIcon(
-                          PhosphorIconsDuotone.truck,
+                          PhosphorIconsDuotone.trash,
                           size: 26,
                           color: AppColor.white,
                         ),

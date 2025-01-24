@@ -6,6 +6,7 @@ import 'package:latlong2/latlong.dart';
 import 'package:phosphor_flutter/phosphor_flutter.dart';
 import 'package:tennaxia_geolocation/src/app/routes/app_router.dart';
 import 'package:tennaxia_geolocation/src/features/producer/producer.dart';
+import 'package:tennaxia_geolocation/src/features/producer/widgets/widgets.dart';
 import 'package:tennaxia_geolocation/src/utils/utils.dart';
 import 'package:tennaxia_geolocation/src/widgets/widgets.dart';
 
@@ -19,12 +20,20 @@ class PickUpDetailView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final steps = [true, false, false];
+    if (producerPickUp.status == 'En cours') {
+      steps[1] = true;
+    } else if (producerPickUp.status == 'Terminé') {
+      steps[1] = true;
+      steps[2] = true;
+    }
+
     return Scaffold(
       appBar: AppBar(
         title: Text(
-          'ToxiMark',
+          'Détail de la collecte',
           style: context.textTheme.displayMedium!.copyWith(
-            fontSize: 22,
+            fontSize: 26,
             color: AppColor.primary,
           ),
         ),
@@ -60,61 +69,157 @@ class PickUpDetailView extends StatelessWidget {
               producerPickUp.wasteCode.toString(),
               style: context.textTheme.bodyLarge,
             ),
-            const VSpace.md(),
-            Text(
-              'Statut : ${producerPickUp.status}',
-              style: context.textTheme.bodyLarge,
-            ),
-            Container(
-              decoration: BoxDecoration(
-                color: AppColor.white,
-                borderRadius: AppCorner.lgBorder,
-                boxShadow: [
-                  BoxShadow(
-                    color: Colors.black.withValues(alpha: 0.06),
-                    spreadRadius: 1,
-                    blurRadius: 3,
-                    offset: const Offset(0, 1),
+            const VSpace.lg(),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: [
+                StepWidget(
+                  isActive: steps[0],
+                  iconData: PhosphorIconsRegular.trash,
+                  description: 'En attente',
+                ),
+                SizedBox(
+                  width: 25,
+                  child: Divider(
+                    color: steps[1] ? AppColor.primary : AppColor.mediumGrey,
+                    thickness: 2,
                   ),
-                ],
-              ),
-              width: double.infinity,
-              child: Padding(
-                padding: const EdgeInsets.all(8),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
+                ),
+                StepWidget(
+                  isActive: steps[1],
+                  iconData: PhosphorIconsRegular.truckTrailer,
+                  description: 'En transit',
+                ),
+                SizedBox(
+                  width: 25,
+                  child: Divider(
+                    color: steps[2] ? AppColor.primary : AppColor.mediumGrey,
+                    thickness: 2,
+                  ),
+                ),
+                StepWidget(
+                  isActive: steps[2],
+                  iconData: PhosphorIconsRegular.recycle,
+                  description: 'Traité',
+                ),
+              ],
+            ),
+            const VSpace.lg(),
+            Column(
+              children: [
+                Row(
                   children: [
-                    // TODO(jonas): Changer avec des icones à la place du texte
+                    DecoratedBox(
+                      decoration: BoxDecoration(
+                        border: Border.all(
+                          color: AppColor.primary,
+                        ),
+                        borderRadius: AppCorner.lgBorder,
+                      ),
+                      child: const Padding(
+                        padding: EdgeInsets.all(6),
+                        child: PhosphorIcon(
+                          PhosphorIconsDuotone.truck,
+                          size: 26,
+                          color: AppColor.primary,
+                        ),
+                      ),
+                    ),
+                    const HSpace.sm(),
                     Text(
                       'Transporteur',
                       style: context.textTheme.bodyLarge,
                     ),
-                    const VSpace.xxs(),
-                    Text(
-                      'Quantité : ${producerPickUp.quantity} ${producerPickUp.unit}',
-                      style: context.textTheme.bodyLarge,
+                  ],
+                ),
+                const VSpace.sm(),
+                Row(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Row(
+                      children: [
+                        DecoratedBox(
+                          decoration: BoxDecoration(
+                            border: Border.all(
+                              color: AppColor.primary,
+                            ),
+                            borderRadius: AppCorner.lgBorder,
+                          ),
+                          child: const Padding(
+                            padding: EdgeInsets.all(6),
+                            child: PhosphorIcon(
+                              PhosphorIconsDuotone.trash,
+                              size: 26,
+                              color: AppColor.primary,
+                            ),
+                          ),
+                        ),
+                        const HSpace.sm(),
+                        Text(
+                          '${producerPickUp.quantity} ${producerPickUp.unit}',
+                          style: context.textTheme.bodyLarge,
+                        ),
+                      ],
                     ),
-                    const VSpace.xxs(),
-                    Text(
-                      'Conditionnement : ${producerPickUp.packagingType}',
-                      style: context.textTheme.bodyLarge,
+                    const HSpace.xl(),
+                    Row(
+                      children: [
+                        DecoratedBox(
+                          decoration: BoxDecoration(
+                            border: Border.all(
+                              color: AppColor.primary,
+                            ),
+                            borderRadius: AppCorner.lgBorder,
+                          ),
+                          child: const Padding(
+                            padding: EdgeInsets.all(6),
+                            child: PhosphorIcon(
+                              PhosphorIconsDuotone.package,
+                              size: 26,
+                              color: AppColor.primary,
+                            ),
+                          ),
+                        ),
+                        const HSpace.sm(),
+                        Text(
+                          producerPickUp.packagingType,
+                          style: context.textTheme.bodyLarge,
+                        ),
+                      ],
                     ),
-                    const VSpace.xxs(),
-                    Text(
-                      'Date de collecte : ${DateFormat('dd MMM yyyy').format(producerPickUp.pickUpDate)}',
-                      style: context.textTheme.bodyLarge,
+                  ],
+                ),
+                const VSpace.sm(),
+                Row(
+                  children: [
+                    DecoratedBox(
+                      decoration: BoxDecoration(
+                        border: Border.all(
+                          color: AppColor.primary,
+                        ),
+                        borderRadius: AppCorner.lgBorder,
+                      ),
+                      child: const Padding(
+                        padding: EdgeInsets.all(6),
+                        child: PhosphorIcon(
+                          PhosphorIconsDuotone.calendarDots,
+                          size: 26,
+                          color: AppColor.primary,
+                        ),
+                      ),
                     ),
-                    const VSpace.xxs(),
+                    const HSpace.sm(),
                     Text(
-                      'Date de livraison : ${DateFormat('dd MMM yyyy').format(producerPickUp.dropOffDate)}',
+                      '${DateFormat('dd MMM yyyy').format(producerPickUp.pickUpDate)}'
+                      ' - '
+                      '${DateFormat('dd MMM yyyy').format(producerPickUp.dropOffDate)}',
                       style: context.textTheme.bodyLarge,
                     ),
                   ],
                 ),
-              ),
+              ],
             ),
             const VSpace.xxl(),
-            const VSpace.xs(),
             Text(
               'Points de collecte et de dépôt',
               style: context.textTheme.displaySmall,
