@@ -12,7 +12,7 @@ dependencies:
   flutter_animate: ^4.5.2
   flutter_localizations:
     sdk: flutter
-  flutter_map: ^7.0.2
+  flutter_map: ^8.0.0
   flutter_svg: ^2.0.17
   flutter_verification_code: ^1.1.7
   freezed_annotation: ^2.4.4
