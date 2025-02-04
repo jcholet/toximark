@@ -42,7 +42,7 @@ Pour lancer l'application, utilisez la configuration de lancement dans VSCode/An
 $ flutter run --flavor development --target lib/main_development.dart
 ```
 
-_\*Toximark works on iOS, Android, Web, and Windows._
+_\*Toximark works on iOS and Android._
 
 ---
 
