@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:health_pitstop/src/utils/utils.dart';
 import 'package:loading_animation_widget/loading_animation_widget.dart';
+import 'package:tennaxia_geolocation/src/utils/utils.dart';
 
 /// {@template app_progress_indicator}
 /// A custom progress indicator widget tailored for the application's design.

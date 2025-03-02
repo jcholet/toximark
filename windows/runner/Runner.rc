@@ -89,13 +89,13 @@ BEGIN
     BEGIN
         BLOCK "040904e4"
         BEGIN
-            VALUE "CompanyName", "com.example.verygoodcore.health_pitstop" "\0"
-            VALUE "FileDescription", "health_pitstop" "\0"
+            VALUE "CompanyName", "com.example.verygoodcore.tennaxia-geolocation" "\0"
+            VALUE "FileDescription", "tennaxia_geolocation" "\0"
             VALUE "FileVersion", VERSION_AS_STRING "\0"
-            VALUE "InternalName", "health_pitstop" "\0"
-            VALUE "LegalCopyright", "Copyright (C) 2025 com.example.verygoodcore.health_pitstop. All rights reserved." "\0"
-            VALUE "OriginalFilename", "health_pitstop.exe" "\0"
-            VALUE "ProductName", "Health Pitstop" "\0"
+            VALUE "InternalName", "tennaxia_geolocation" "\0"
+            VALUE "LegalCopyright", "Copyright (C) 2025 com.example.verygoodcore.tennaxia-geolocation. All rights reserved." "\0"
+            VALUE "OriginalFilename", "tennaxia_geolocation.exe" "\0"
+            VALUE "ProductName", "Tennaxia Geolocation" "\0"
             VALUE "ProductVersion", VERSION_AS_STRING "\0"
         END
     END

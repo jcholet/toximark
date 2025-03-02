@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:health_pitstop/src/utils/utils.dart';
+import 'package:tennaxia_geolocation/src/utils/utils.dart';
 
 /// Use `context.textTheme` to access the [TextTheme] of the current [Theme].
 extension TextThemeX on BuildContext {

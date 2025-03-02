@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.14)
-project(health_pitstop LANGUAGES CXX)
+project(tennaxia_geolocation LANGUAGES CXX)
 
-set(BINARY_NAME "health_pitstop")
+set(BINARY_NAME "tennaxia_geolocation")
 
 cmake_policy(SET CMP0063 NEW)
 

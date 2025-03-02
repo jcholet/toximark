@@ -1,7 +1,9 @@
-import 'package:health_pitstop/src/features/authentication/authentication.dart';
-import 'package:health_pitstop/src/features/user/user.dart';
+import 'package:go_router/go_router.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
+import 'package:tennaxia_geolocation/src/app/routes/app_router.dart';
+import 'package:tennaxia_geolocation/src/features/authentication/authentication.dart';
+import 'package:tennaxia_geolocation/src/features/user/user.dart';
 
 part 'user_provider.g.dart';
 

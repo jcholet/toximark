@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_localizations/flutter_localizations.dart';
-import 'package:health_pitstop/l10n/string_hardcoded.dart';
-import 'package:health_pitstop/src/app/routes/app_router.dart';
-import 'package:health_pitstop/src/utils/utils.dart';
+import 'package:tennaxia_geolocation/l10n/l10n.dart';
+import 'package:tennaxia_geolocation/l10n/string_hardcoded.dart';
+import 'package:tennaxia_geolocation/src/app/routes/app_router.dart';
+import 'package:tennaxia_geolocation/src/utils/utils.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 class App extends ConsumerWidget {
@@ -15,14 +15,8 @@ class App extends ConsumerWidget {
       routerConfig: goRouter,
       onGenerateTitle: (_) => 'Tipsst'.hardcoded,
       theme: const AppTheme().themeData,
-      localizationsDelegates: const [
-        GlobalMaterialLocalizations.delegate,
-        GlobalWidgetsLocalizations.delegate,
-        GlobalCupertinoLocalizations.delegate,
-      ],
-      supportedLocales: const [
-        Locale('fr'),
-      ],
+      localizationsDelegates: AppLocalizations.localizationsDelegates,
+      supportedLocales: AppLocalizations.supportedLocales,
       restorationScopeId: 'app',
       debugShowCheckedModeBanner: false,
     );

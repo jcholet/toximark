@@ -499,14 +499,14 @@
 				CLANG_ENABLE_MODULES = YES;
 				CURRENT_PROJECT_VERSION = "$(FLUTTER_BUILD_NUMBER)";
 				ENABLE_BITCODE = NO;
-				FLAVOR_APP_NAME = "Health Pitstop";
+				FLAVOR_APP_NAME = "Tennaxia Geolocation";
 				INFOPLIST_FILE = Runner/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PACKAGE_CONFIG = .dart_tool/package_config.json;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.example.verygoodcore.health_pitstop";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.example.verygoodcore.tennaxia-geolocation";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "Runner/Runner-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -524,7 +524,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.example.verygoodcore.health_pitstop.RunnerTests";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.example.verygoodcore.tennaxia-geolocation.RunnerTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -593,14 +593,14 @@
 				CLANG_ENABLE_MODULES = YES;
 				CURRENT_PROJECT_VERSION = "$(FLUTTER_BUILD_NUMBER)";
 				ENABLE_BITCODE = NO;
-				FLAVOR_APP_NAME = "Health Pitstop";
+				FLAVOR_APP_NAME = "Tennaxia Geolocation";
 				INFOPLIST_FILE = Runner/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PACKAGE_CONFIG = .dart_tool/package_config.json;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.example.verygoodcore.health_pitstop";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.example.verygoodcore.tennaxia-geolocation";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "Runner/Runner-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
@@ -617,7 +617,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.example.verygoodcore.health_pitstop.RunnerTests";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.example.verygoodcore.tennaxia-geolocation.RunnerTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Runner.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Runner";
@@ -682,14 +682,14 @@
 				CLANG_ENABLE_MODULES = YES;
 				CURRENT_PROJECT_VERSION = "$(FLUTTER_BUILD_NUMBER)";
 				ENABLE_BITCODE = NO;
-				FLAVOR_APP_NAME = "Health Pitstop";
+				FLAVOR_APP_NAME = "Tennaxia Geolocation";
 				INFOPLIST_FILE = Runner/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PACKAGE_CONFIG = .dart_tool/package_config.json;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.example.verygoodcore.health_pitstop";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.example.verygoodcore.tennaxia-geolocation";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "Runner/Runner-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
@@ -706,7 +706,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.example.verygoodcore.health_pitstop";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.example.verygoodcore.tennaxia-geolocation";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Runner.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Runner";
@@ -776,14 +776,14 @@
 				CLANG_ENABLE_MODULES = YES;
 				CURRENT_PROJECT_VERSION = "$(FLUTTER_BUILD_NUMBER)";
 				ENABLE_BITCODE = NO;
-				FLAVOR_APP_NAME = "[DEV] Health Pitstop";
+				FLAVOR_APP_NAME = "[DEV] Tennaxia Geolocation";
 				INFOPLIST_FILE = Runner/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PACKAGE_CONFIG = .dart_tool/package_config.json;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.example.verygoodcore.health_pitstop.dev";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.example.verygoodcore.tennaxia-geolocation.dev";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "Runner/Runner-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -801,7 +801,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.example.verygoodcore.health_pitstop.RunnerTests";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.example.verygoodcore.tennaxia-geolocation.RunnerTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -868,14 +868,14 @@
 				CLANG_ENABLE_MODULES = YES;
 				CURRENT_PROJECT_VERSION = "$(FLUTTER_BUILD_NUMBER)";
 				ENABLE_BITCODE = NO;
-				FLAVOR_APP_NAME = "[DEV] Health Pitstop";
+				FLAVOR_APP_NAME = "[DEV] Tennaxia Geolocation";
 				INFOPLIST_FILE = Runner/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PACKAGE_CONFIG = .dart_tool/package_config.json;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.example.verygoodcore.health_pitstop.dev";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.example.verygoodcore.tennaxia-geolocation.dev";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "Runner/Runner-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
@@ -892,7 +892,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.example.verygoodcore.health_pitstop.RunnerTests";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.example.verygoodcore.tennaxia-geolocation.RunnerTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Runner.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Runner";
@@ -959,14 +959,14 @@
 				CLANG_ENABLE_MODULES = YES;
 				CURRENT_PROJECT_VERSION = "$(FLUTTER_BUILD_NUMBER)";
 				ENABLE_BITCODE = NO;
-				FLAVOR_APP_NAME = "[DEV] Health Pitstop";
+				FLAVOR_APP_NAME = "[DEV] Tennaxia Geolocation";
 				INFOPLIST_FILE = Runner/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PACKAGE_CONFIG = .dart_tool/package_config.json;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.example.verygoodcore.health_pitstop.dev";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.example.verygoodcore.tennaxia-geolocation.dev";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "Runner/Runner-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
@@ -983,7 +983,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.example.verygoodcore.health_pitstop.RunnerTests";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.example.verygoodcore.tennaxia-geolocation.RunnerTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Runner.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Runner";
@@ -1053,14 +1053,14 @@
 				CLANG_ENABLE_MODULES = YES;
 				CURRENT_PROJECT_VERSION = "$(FLUTTER_BUILD_NUMBER)";
 				ENABLE_BITCODE = NO;
-				FLAVOR_APP_NAME = "[STG] Health Pitstop";
+				FLAVOR_APP_NAME = "[STG] Tennaxia Geolocation";
 				INFOPLIST_FILE = Runner/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PACKAGE_CONFIG = .dart_tool/package_config.json;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.example.verygoodcore.health_pitstop.stg";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.example.verygoodcore.tennaxia-geolocation.stg";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "Runner/Runner-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -1078,7 +1078,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.example.verygoodcore.health_pitstop.RunnerTests";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.example.verygoodcore.tennaxia-geolocation.RunnerTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -1147,14 +1147,14 @@
 				CLANG_ENABLE_MODULES = YES;
 				CURRENT_PROJECT_VERSION = "$(FLUTTER_BUILD_NUMBER)";
 				ENABLE_BITCODE = NO;
-				FLAVOR_APP_NAME = "[STG] Health Pitstop";
+				FLAVOR_APP_NAME = "[STG] Tennaxia Geolocation";
 				INFOPLIST_FILE = Runner/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PACKAGE_CONFIG = .dart_tool/package_config.json;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.example.verygoodcore.health_pitstop.stg";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.example.verygoodcore.tennaxia-geolocation.stg";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "Runner/Runner-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
@@ -1171,7 +1171,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.example.verygoodcore.health_pitstop.RunnerTests";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.example.verygoodcore.tennaxia-geolocation.RunnerTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Runner.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Runner";
@@ -1236,14 +1236,14 @@
 				CLANG_ENABLE_MODULES = YES;
 				CURRENT_PROJECT_VERSION = "$(FLUTTER_BUILD_NUMBER)";
 				ENABLE_BITCODE = NO;
-				FLAVOR_APP_NAME = "[STG] Health Pitstop";
+				FLAVOR_APP_NAME = "[STG] Tennaxia Geolocation";
 				INFOPLIST_FILE = Runner/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PACKAGE_CONFIG = .dart_tool/package_config.json;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.example.verygoodcore.health_pitstop.stg";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.example.verygoodcore.tennaxia-geolocation.stg";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "Runner/Runner-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
@@ -1260,7 +1260,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.example.verygoodcore.health_pitstop.RunnerTests";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.example.verygoodcore.tennaxia-geolocation.RunnerTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Runner.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Runner";

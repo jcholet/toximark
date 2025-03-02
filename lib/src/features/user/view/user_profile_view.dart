@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
+import 'package:tennaxia_geolocation/src/app/routes/app_router.dart';
 
 class UserProfileView extends StatelessWidget {
   const UserProfileView({super.key});
@@ -14,7 +16,11 @@ class UserProfileView extends StatelessWidget {
       ),
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: 1, // Profile tab is selected
-        onTap: (index) {},
+        onTap: (index) {
+          if (index == 0) {
+            context.goNamed(AppRoute.homeProducer.name);
+          }
+        },
         items: const [
           BottomNavigationBarItem(
             icon: Icon(Icons.home),

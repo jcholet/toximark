@@ -23,6 +23,7 @@ mixin _$User {
   String get id => throw _privateConstructorUsedError;
   String? get firstName => throw _privateConstructorUsedError;
   String? get lastName => throw _privateConstructorUsedError;
+  Role? get role => throw _privateConstructorUsedError;
 
   /// Serializes this User to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -38,7 +39,9 @@ abstract class $UserCopyWith<$Res> {
   factory $UserCopyWith(User value, $Res Function(User) then) =
       _$UserCopyWithImpl<$Res, User>;
   @useResult
-  $Res call({String id, String? firstName, String? lastName});
+  $Res call({String id, String? firstName, String? lastName, Role? role});
+
+  $RoleCopyWith<$Res>? get role;
 }
 
 /// @nodoc
@@ -59,6 +62,7 @@ class _$UserCopyWithImpl<$Res, $Val extends User>
     Object? id = null,
     Object? firstName = freezed,
     Object? lastName = freezed,
+    Object? role = freezed,
   }) {
     return _then(_value.copyWith(
       id: null == id
@@ -73,7 +77,25 @@ class _$UserCopyWithImpl<$Res, $Val extends User>
           ? _value.lastName
           : lastName // ignore: cast_nullable_to_non_nullable
               as String?,
+      role: freezed == role
+          ? _value.role
+          : role // ignore: cast_nullable_to_non_nullable
+              as Role?,
     ) as $Val);
+  }
+
+  /// Create a copy of User
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $RoleCopyWith<$Res>? get role {
+    if (_value.role == null) {
+      return null;
+    }
+
+    return $RoleCopyWith<$Res>(_value.role!, (value) {
+      return _then(_value.copyWith(role: value) as $Val);
+    });
   }
 }
 
@@ -84,7 +106,10 @@ abstract class _$$UserImplCopyWith<$Res> implements $UserCopyWith<$Res> {
       __$$UserImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({String id, String? firstName, String? lastName});
+  $Res call({String id, String? firstName, String? lastName, Role? role});
+
+  @override
+  $RoleCopyWith<$Res>? get role;
 }
 
 /// @nodoc
@@ -102,6 +127,7 @@ class __$$UserImplCopyWithImpl<$Res>
     Object? id = null,
     Object? firstName = freezed,
     Object? lastName = freezed,
+    Object? role = freezed,
   }) {
     return _then(_$UserImpl(
       id: null == id
@@ -116,6 +142,10 @@ class __$$UserImplCopyWithImpl<$Res>
           ? _value.lastName
           : lastName // ignore: cast_nullable_to_non_nullable
               as String?,
+      role: freezed == role
+          ? _value.role
+          : role // ignore: cast_nullable_to_non_nullable
+              as Role?,
     ));
   }
 }
@@ -123,7 +153,7 @@ class __$$UserImplCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _$UserImpl extends _User {
-  const _$UserImpl({required this.id, this.firstName, this.lastName})
+  const _$UserImpl({required this.id, this.firstName, this.lastName, this.role})
       : super._();
 
   factory _$UserImpl.fromJson(Map<String, dynamic> json) =>
@@ -135,10 +165,12 @@ class _$UserImpl extends _User {
   final String? firstName;
   @override
   final String? lastName;
+  @override
+  final Role? role;
 
   @override
   String toString() {
-    return 'User(id: $id, firstName: $firstName, lastName: $lastName)';
+    return 'User(id: $id, firstName: $firstName, lastName: $lastName, role: $role)';
   }
 
   @override
@@ -150,12 +182,13 @@ class _$UserImpl extends _User {
             (identical(other.firstName, firstName) ||
                 other.firstName == firstName) &&
             (identical(other.lastName, lastName) ||
-                other.lastName == lastName));
+                other.lastName == lastName) &&
+            (identical(other.role, role) || other.role == role));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  int get hashCode => Object.hash(runtimeType, id, firstName, lastName);
+  int get hashCode => Object.hash(runtimeType, id, firstName, lastName, role);
 
   /// Create a copy of User
   /// with the given fields replaced by the non-null parameter values.
@@ -177,7 +210,8 @@ abstract class _User extends User {
   const factory _User(
       {required final String id,
       final String? firstName,
-      final String? lastName}) = _$UserImpl;
+      final String? lastName,
+      final Role? role}) = _$UserImpl;
   const _User._() : super._();
 
   factory _User.fromJson(Map<String, dynamic> json) = _$UserImpl.fromJson;
@@ -188,6 +222,8 @@ abstract class _User extends User {
   String? get firstName;
   @override
   String? get lastName;
+  @override
+  Role? get role;
 
   /// Create a copy of User
   /// with the given fields replaced by the non-null parameter values.

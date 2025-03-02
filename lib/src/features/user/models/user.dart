@@ -1,4 +1,5 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:tennaxia_geolocation/src/features/role/models/role.dart';
 
 part 'user.freezed.dart';
 part 'user.g.dart';
@@ -11,6 +12,7 @@ class User with _$User {
     required UserId id,
     String? firstName,
     String? lastName,
+    Role? role,
   }) = _User;
 
   const User._();
