@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:tennaxia_geolocation/src/utils/utils.dart';
+import 'package:health_pitstop/src/utils/utils.dart';
 
 /// {@template app_text_field}
 /// A text field component based on material [TextFormField] widget with a

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:tennaxia_geolocation/src/utils/utils.dart';
+import 'package:health_pitstop/src/utils/utils.dart';
 
 /// A widget that represents vertical spacing, allowing for consistent and
 /// customizable vertical gaps in your app's layout.

@@ -1,4 +1,4 @@
-name: tennaxia_geolocation
+name: health_pitstop
 
 concurrency:
   group: $-$

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:tennaxia_geolocation/src/utils/utils.dart';
+import 'package:health_pitstop/src/utils/utils.dart';
 
 /// {@template app_button}
 /// Button with text displayed in the application.

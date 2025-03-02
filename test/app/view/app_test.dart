@@ -1,5 +1,5 @@
 import 'package:flutter_test/flutter_test.dart';
-import 'package:tennaxia_geolocation/src/app/app.dart';
+import 'package:health_pitstop/src/app/view/app.dart';
 
 void main() {
   group('App', () {

@@ -9,5 +9,7 @@ export 'app_text_style.dart';
 export 'app_tile_layer.dart';
 export 'app_time.dart';
 export 'env.dart';
+export 'extensions/extensions.dart';
+export 'mixin/mixin.dart';
 export 'spacing.dart';
 export 'text_theme.dart';

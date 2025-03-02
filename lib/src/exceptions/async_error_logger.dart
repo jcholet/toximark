@@ -1,6 +1,6 @@
+import 'package:health_pitstop/src/exceptions/app_exception.dart';
+import 'package:health_pitstop/src/exceptions/error_logger.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
-import 'package:tennaxia_geolocation/src/exceptions/app_exception.dart';
-import 'package:tennaxia_geolocation/src/exceptions/error_logger.dart';
 
 /// Error logger class to keep track of all [AsyncError] states that are set
 /// by the controllers in the app.

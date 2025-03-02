@@ -1,6 +1,6 @@
 import 'package:flutter/foundation.dart';
+import 'package:health_pitstop/src/exceptions/app_exception.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
-import 'package:tennaxia_geolocation/src/exceptions/app_exception.dart';
 
 class ErrorLogger {
   void logError(Object error, StackTrace? stackTrace) {

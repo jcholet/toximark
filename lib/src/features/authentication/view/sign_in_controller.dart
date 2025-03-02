@@ -1,5 +1,5 @@
+import 'package:health_pitstop/src/features/authentication/data/auth_repository.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
-import 'package:tennaxia_geolocation/src/features/authentication/authentication.dart';
 
 part 'sign_in_controller.g.dart';
 

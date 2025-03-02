@@ -1,8 +1,8 @@
 import 'package:geolocator/geolocator.dart';
+import 'package:health_pitstop/l10n/string_hardcoded.dart';
+import 'package:health_pitstop/src/utils/utils.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
-import 'package:tennaxia_geolocation/l10n/string_hardcoded.dart';
-import 'package:tennaxia_geolocation/src/utils/utils.dart';
 
 part 'location_repository.g.dart';
 

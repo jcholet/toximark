@@ -28,7 +28,7 @@ abstract class AppColor {
   /// The primary color of the app, characterized by a vibrant shade of blue
   /// with an RGB value of `#1871FB`. Often used for call-to-action buttons,
   /// active elements, or highlighting important content.
-  static const Color primary = Color(0xFF20325C);
+  static const Color primary = Color(0xFF141E41);
 
   /// Represents a lighter shade of grey with an RGB value of `#CCCCCC`.
   /// Suitable for more subdued or lighter backgrounds and elements.

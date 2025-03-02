@@ -1,19 +1,19 @@
 import 'dart:async';
 import 'dart:developer';
 import 'dart:io';
+
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
+import 'package:health_pitstop/l10n/string_hardcoded.dart';
+import 'package:health_pitstop/src/app/view/app.dart';
+import 'package:health_pitstop/src/exceptions/async_error_logger.dart';
+import 'package:health_pitstop/src/exceptions/error_logger.dart';
+import 'package:health_pitstop/src/features/user/application/user_provider.dart';
+import 'package:health_pitstop/src/utils/utils.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:intl/intl.dart';
 import 'package:mapbox_maps_flutter/mapbox_maps_flutter.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
-import 'package:tennaxia_geolocation/l10n/string_hardcoded.dart';
-import 'package:tennaxia_geolocation/src/app/view/app.dart';
-import 'package:tennaxia_geolocation/src/exceptions/async_error_logger.dart';
-import 'package:tennaxia_geolocation/src/exceptions/error_logger.dart';
-import 'package:tennaxia_geolocation/src/features/user/application/user_provider.dart';
-import 'package:tennaxia_geolocation/src/utils/utils.dart';
 
 void registerErrorHandlers(ErrorLogger errorLogger) {
   // * Show some error UI if any uncaught exception happens

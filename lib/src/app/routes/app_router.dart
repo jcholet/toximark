@@ -1,14 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:health_pitstop/src/app/routes/go_router_refresh_stream.dart';
+import 'package:health_pitstop/src/features/authentication/authentication.dart';
+import 'package:health_pitstop/src/features/home/home.dart';
+import 'package:health_pitstop/src/features/onboarding/onboarding.dart';
+import 'package:health_pitstop/src/features/welcome/welcome.dart';
+import 'package:health_pitstop/src/utils/utils.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
-import 'package:tennaxia_geolocation/src/app/routes/go_router_refresh_stream.dart';
-import 'package:tennaxia_geolocation/src/features/authentication/authentication.dart';
-import 'package:tennaxia_geolocation/src/features/producer/producer.dart';
-import 'package:tennaxia_geolocation/src/features/transporter/view/transporter_pick_up_confirm_signature_view.dart';
-import 'package:tennaxia_geolocation/src/features/transporter/view/transporter_pick_up_signing_view.dart';
-import 'package:tennaxia_geolocation/src/features/user/application/user_provider.dart';
-import 'package:tennaxia_geolocation/src/features/user/view/user_profile_view.dart';
 
 part 'app_router.g.dart';
 
@@ -20,14 +19,12 @@ part 'app_router.g.dart';
 /// ```
 enum AppRoute {
   startUp,
+  welcome,
   signIn,
-  homeSorting,
-  homeProducer,
-  pickUpDetail,
-  producerSigning,
-  confirmSignature,
-  transporterSignature,
-  transporterConfirmSignature,
+  signUp,
+  onboarding,
+  onboardingSuccessStep,
+  home,
   userProfile,
 }
 
@@ -36,40 +33,37 @@ GoRouter goRouter(Ref ref) {
   // Rebuild GoRouter when app startup state changes
   final authRepository = ref.watch(authRepositoryProvider);
   return GoRouter(
-    initialLocation: '/signIn',
+    initialLocation: '/welcome',
     // debugLogDiagnostics: true,
     redirect: (_, state) {
-      final user = authRepository.currentUser;
+      final currentUser = authRepository.currentUser;
       final path = state.uri.path;
 
-      // If no user, always redirect to sign in
-      if (user == null) {
-        return '/signIn';
+      if (currentUser != null) {
+        // Check if the user has completed the onboarding
+        if (currentUser.isComplete) {
+          if (path == '/startup' ||
+              path.startsWith('/welcome') ||
+              path.startsWith('/onboarding')) {
+            return '/home';
+          }
+        } else {
+          if (!path.startsWith('/onboarding')) {
+            return '/onboarding';
+          }
+        }
+      } else {
+        if (path == '/startup' ||
+            path.startsWith('/onboarding') ||
+            path.startsWith('/savedPlaces') ||
+            path.startsWith('/home') ||
+            path.startsWith('/user') ||
+            path.startsWith('/settings')) {
+          return '/welcome';
+        }
       }
 
-      final userRole =
-          authRepository.currentUser!.appMetadata['role'] as String?;
-
-      // Allow access to user profile for all authenticated users
-      if (path == '/userProfile') {
-        return null;
-      }
-
-      // Allow users to stay on their proper home routes and sub-routes
-      if ((userRole == 'producer' && path.startsWith('/homeProducer')) ||
-          (userRole == 'sorting_center' && path.startsWith('/homeSorting'))) {
-        return null;
-      }
-
-      // Redirect to appropriate home page based on role
-      switch (userRole) {
-        case 'producer':
-          return '/homeProducer';
-        case 'sorting_center':
-          return '/homeSorting';
-        default:
-          return '/signIn';
-      }
+      return null;
     },
     refreshListenable: GoRouterRefreshStream(authRepository.onAuthStateChange),
     routes: [
@@ -81,77 +75,56 @@ GoRouter goRouter(Ref ref) {
         ),
       ),
       GoRoute(
-        path: '/signIn',
-        name: AppRoute.signIn.name,
-        builder: (_, __) => const SignInView(),
-      ),
-      GoRoute(
-        path: '/homeProducer',
-        name: AppRoute.homeProducer.name,
-        builder: (_, __) => const HomeProducerView(),
+        path: '/welcome',
+        name: AppRoute.welcome.name,
+        pageBuilder: (_, __) => const NoTransitionPage(
+          child: WelcomeView(),
+        ),
         routes: [
           GoRoute(
-            path: 'pickUpDetail',
-            name: AppRoute.pickUpDetail.name,
-            builder: (_, state) {
-              final producerPickUp = state.extra! as ProducerPickUp;
-              return PickUpDetailView(producerPickUp: producerPickUp);
-            },
-            routes: [
-              GoRoute(
-                path: 'producerSigning',
-                name: AppRoute.producerSigning.name,
-                builder: (_, state) {
-                  final producerPickUp = state.extra! as ProducerPickUp;
-                  return ProducerSigningView(
-                    producerPickUp: producerPickUp,
-                  );
-                },
-                routes: [
-                  GoRoute(
-                    path: 'confirmSignature',
-                    name: AppRoute.confirmSignature.name,
-                    builder: (_, state) {
-                      final signExtra = state.extra! as SignExtra;
-                      return ConfirmSignatureView(
-                        signExtra: signExtra,
-                      );
-                    },
-                    routes: [
-                      GoRoute(
-                        path: 'transporterSignature',
-                        name: AppRoute.transporterSignature.name,
-                        builder: (_, state) {
-                          final producerPickUp = state.extra! as ProducerPickUp;
-                          return TransporterPickUpSigningView(
-                            producerPickUp: producerPickUp,
-                          );
-                        },
-                        routes: [
-                          GoRoute(
-                            path: 'transporterConfirmSignature',
-                            name: AppRoute.transporterConfirmSignature.name,
-                            builder: (_, state) {
-                              final signExtra = state.extra! as SignExtra;
-                              return TransporterPickUpConfirmSignatureView(
-                                signExtra: signExtra,
-                              );
-                            },
-                          ),
-                        ],
-                      ),
-                    ],
-                  ),
-                ],
-              ),
-            ],
+            path: 'signIn',
+            name: AppRoute.signIn.name,
+            builder: (_, __) => const SignInView(),
+          ),
+          GoRoute(
+            path: 'signUp',
+            name: AppRoute.signUp.name,
+            builder: (_, __) => const SignUpView(),
           ),
         ],
       ),
       GoRoute(
-        path: '/userProfile',
-        name: AppRoute.userProfile.name,
-        builder: (_, __) => const UserProfileView(),
+        path: '/onboarding',
+        name: AppRoute.onboarding.name,
+        pageBuilder: (_, __) => const NoTransitionPage(
+          child: OnboardingView(),
+        ),
+        routes: [
+          GoRoute(
+            path: 'success',
+            name: AppRoute.onboardingSuccessStep.name,
+            pageBuilder: (_, __) {
+              return CustomTransitionPage(
+                transitionDuration: AppTime.fastest,
+                reverseTransitionDuration: AppTime.fastest,
+                transitionsBuilder: (_, animation, __, child) {
+                  return FadeTransition(
+                    opacity: animation,
+                    child: child,
+                  );
+                },
+                child: const SuccessStep(),
+              );
+            },
+          ),
+        ],
+      ),
+      GoRoute(
+        path: '/home',
+        name: AppRoute.home.name,
+        pageBuilder: (_, __) => const NoTransitionPage(
+          child: HomeView(),
+        ),
       ),
     ],
   );

@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
+import 'package:go_router/go_router.dart';
+import 'package:health_pitstop/l10n/string_hardcoded.dart';
+import 'package:health_pitstop/src/app/routes/app_router.dart';
+import 'package:health_pitstop/src/features/authentication/validators/auth_validators.dart';
+import 'package:health_pitstop/src/features/authentication/view/sign_in_controller.dart';
+import 'package:health_pitstop/src/utils/utils.dart';
+import 'package:health_pitstop/src/widgets/widgets.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:phosphor_flutter/phosphor_flutter.dart';
-import 'package:tennaxia_geolocation/l10n/string_hardcoded.dart';
-import 'package:tennaxia_geolocation/src/features/authentication/view/sign_in_controller.dart';
-import 'package:tennaxia_geolocation/src/utils/utils.dart';
-import 'package:tennaxia_geolocation/src/widgets/widgets.dart';
 
 class SignInView extends ConsumerStatefulWidget {
   const SignInView({
@@ -19,7 +21,7 @@ class SignInView extends ConsumerStatefulWidget {
   ConsumerState<ConsumerStatefulWidget> createState() => _SignInViewState();
 }
 
-class _SignInViewState extends ConsumerState<SignInView> {
+class _SignInViewState extends ConsumerState<SignInView> with SignInValidators {
   final _formKey = GlobalKey<FormState>();
   final _node = FocusScopeNode();
   final _emailController = TextEditingController();
@@ -38,8 +40,22 @@ class _SignInViewState extends ConsumerState<SignInView> {
     super.dispose();
   }
 
+  String? _validateEmail(String? value) {
+    return value != null ? emailErrorText(value) : 'Adresse email requise';
+  }
+
+  String? _validatePassword(String? value) {
+    return value != null ? passwordErrorText(value) : 'Mot de passe requis';
+  }
+
   Future<void> _submit() async {
     setState(() => _submitted = true);
+
+    // Validate form
+    if (_formKey.currentState?.validate() != true) {
+      return;
+    }
+
     final controller = ref.read(signInControllerProvider.notifier);
     final success = await controller.signIn(
       email: email,
@@ -55,6 +71,16 @@ class _SignInViewState extends ConsumerState<SignInView> {
   Widget build(BuildContext context) {
     final state = ref.watch(signInControllerProvider);
     return Scaffold(
+      appBar: AppBar(
+        leading: IconButton(
+          icon: const PhosphorIcon(PhosphorIconsRegular.arrowLeft),
+          onPressed: () => context.goNamed(AppRoute.welcome.name),
+        ),
+        title: Text(
+          'Connexion'.hardcoded,
+          style: context.textTheme.displaySmall,
+        ),
+      ),
       body: SafeArea(
         child: FocusScope(
           node: _node,
@@ -65,15 +91,6 @@ class _SignInViewState extends ConsumerState<SignInView> {
               padding: const EdgeInsets.all(AppSpacing.lg),
               children: [
                 const VSpace.xl(),
-                Center(
-                  child: SvgPicture.asset(
-                    'lib/assets/img/tennaxia.svg', // Chemin mis à jour
-                    height: 60,
-                  ),
-                ),
-                const VSpace.xl(),
-                const VSpace.xl(),
-                const VSpace.xl(),
                 AppTextField(
                   controller: _emailController,
                   titleText: 'Adresse email'.hardcoded,
@@ -81,6 +98,7 @@ class _SignInViewState extends ConsumerState<SignInView> {
                   keyboardType: TextInputType.emailAddress,
                   textInputAction: TextInputAction.next,
                   autocorrect: false,
+                  validator: _submitted ? _validateEmail : null,
                   prefixIcon: const Padding(
                     padding: EdgeInsets.symmetric(horizontal: AppSpacing.sm),
                     child: PhosphorIcon(
@@ -94,7 +112,10 @@ class _SignInViewState extends ConsumerState<SignInView> {
                 AppTextField(
                   controller: _passwordController,
                   titleText: 'Mot de passe'.hardcoded,
-                  autovalidateMode: AutovalidateMode.onUserInteraction,
+                  autovalidateMode: _submitted
+                      ? AutovalidateMode.onUserInteraction
+                      : AutovalidateMode.disabled,
+                  validator: _submitted ? _validatePassword : null,
                   autoFillHints: const [AutofillHints.password],
                   obscureText: true,
                   keyboardType: TextInputType.visiblePassword,
@@ -118,12 +139,26 @@ class _SignInViewState extends ConsumerState<SignInView> {
                       : const AppProgressIndicator(color: AppColor.white),
                 ),
                 const VSpace.lg(),
-                Center(
-                  child: Text(
-                    'Application développé lors de la DCW 2025.',
-                    style: context.textTheme.bodySmall,
+                AppButton.tinyTransparent(
+                  onPressed: () => context.replaceNamed(AppRoute.signUp.name),
+                  child: Text.rich(
+                    TextSpan(
+                      children: [
+                        TextSpan(
+                          text: 'Pas encore de compte ? '.hardcoded,
+                          style: context.textTheme.bodyMedium,
+                        ),
+                        TextSpan(
+                          text: 'Inscrivez-vous'.hardcoded,
+                          style: context.textTheme.titleMedium,
+                        ),
+                      ],
+                    ),
+                    style: context.textTheme.bodyMedium,
+                    textAlign: TextAlign.center,
                   ),
                 ),
+                const VSpace.xl(),
               ],
             ),
           ),
